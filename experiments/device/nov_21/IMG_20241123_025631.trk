@@ -42,11 +42,11 @@
         <property name="framedata" type="array" class="[Lorg.opensourcephysics.media.core.ImageCoordSystem$FrameData;">
             <property name="[0]" type="object">
             <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
-                <property name="xorigin" type="double">545.7794278226688</property>
-                <property name="yorigin" type="double">1460.3887311640096</property>
+                <property name="xorigin" type="double">546.1011673151751</property>
+                <property name="yorigin" type="double">1826.4747081712062</property>
                 <property name="angle" type="double">-90.14099181911367</property>
-                <property name="xscale" type="double">366.7374801608386</property>
-                <property name="yscale" type="double">366.7374801608386</property>
+                <property name="xscale" type="double">237.33984877887065</property>
+                <property name="yscale" type="double">237.33984877887065</property>
             </object>
             </property>
         </property>
@@ -93,10 +93,10 @@
             <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData;">
                 <property name="[0]" type="object">
                 <object class="org.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData">
-                    <property name="x1" type="double">548.4824902723735</property>
-                    <property name="y1" type="double">1460.544747081712</property>
+                    <property name="x1" type="double">546.1011673151751</property>
+                    <property name="y1" type="double">2064.6070038910507</property>
                     <property name="x2" type="double">545.3073929961089</property>
-                    <property name="y2" type="double">1827.2684824902724</property>
+                    <property name="y2" type="double">1827.2684824902726</property>
                 </object>
                 </property>
             </property>
@@ -570,7 +570,7 @@
         </object>
         </property>
     </property>
-    <property name="selectedtrack" type="string">calibration stick A</property>
+    <property name="selectedtrack" type="string">axes</property>
     <property name="dividers" type="array" class="[D">
         <property name="array" type="string">{0.8377303939284424,0.34480560866794135,1.0,0.07589447054571738}</property>
     </property>
@@ -591,6 +591,4 @@
         <property name="stretch_acceleration" type="int">1</property>
     </object>
     </property>
-    <property name="track_control_x" type="int">467</property>
-    <property name="track_control_y" type="int">22</property>
 </object>
