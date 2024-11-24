@@ -3,9 +3,9 @@
     <property name="semantic_version" type="string">6.2.0</property>
     <property name="width" type="double">1080.0</property>
     <property name="height" type="double">1920.0</property>
-    <property name="magnification" type="double">1.0</property>
+    <property name="magnification" type="double">0.7937005259840997</property>
     <property name="center_x" type="int">917</property>
-    <property name="center_y" type="int">749</property>
+    <property name="center_y" type="int">756</property>
     <property name="videoclip" type="object">
     <object class="org.opensourcephysics.media.core.VideoClip">
         <property name="video" type="object">
@@ -53,11 +53,11 @@
         <property name="framedata" type="array" class="[Lorg.opensourcephysics.media.core.ImageCoordSystem$FrameData;">
             <property name="[0]" type="object">
             <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
-                <property name="xorigin" type="double">620.5</property>
-                <property name="yorigin" type="double">577.0</property>
+                <property name="xorigin" type="double">612.4885095206829</property>
+                <property name="yorigin" type="double">779.0938936309915</property>
                 <property name="angle" type="double">-91.18826373990422</property>
-                <property name="xscale" type="double">199.64466730867434</property>
-                <property name="yscale" type="double">199.64466730867434</property>
+                <property name="xscale" type="double">177.7946616299635</property>
+                <property name="yscale" type="double">177.7946616299635</property>
             </object>
             </property>
         </property>
@@ -1015,10 +1015,10 @@
             <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData;">
                 <property name="[0]" type="object">
                 <object class="org.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData">
-                    <property name="x1" type="double">620.631090487239</property>
-                    <property name="y1" type="double">574.6635730858468</property>
-                    <property name="x2" type="double">615.2853828306265</property>
-                    <property name="y2" type="double">774.2366589327147</property>
+                    <property name="x1" type="double">607.4458305975049</property>
+                    <property name="y1" type="double">956.8483256730138</property>
+                    <property name="x2" type="double">611.2278397898884</property>
+                    <property name="y2" type="double">779.0938936309915</property>
                 </object>
                 </property>
             </property>
@@ -1028,7 +1028,7 @@
         </object>
         </property>
     </property>
-    <property name="selectedtrack" type="string">axes</property>
+    <property name="selectedtrack" type="string">calibration stick A</property>
     <property name="dividers" type="array" class="[D">
         <property name="array" type="string">{0.6707625587278642,0.2447418738049713,1.0,0.15323455005421033}</property>
     </property>

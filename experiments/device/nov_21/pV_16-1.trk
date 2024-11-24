@@ -3,9 +3,9 @@
     <property name="semantic_version" type="string">6.2.0</property>
     <property name="width" type="double">1080.0</property>
     <property name="height" type="double">1920.0</property>
-    <property name="magnification" type="double">1.259921049894873</property>
+    <property name="magnification" type="double">1.5874010519681996</property>
     <property name="center_x" type="int">779</property>
-    <property name="center_y" type="int">1197</property>
+    <property name="center_y" type="int">1517</property>
     <property name="videoclip" type="object">
     <object class="org.opensourcephysics.media.core.VideoClip">
         <property name="video" type="object">
@@ -53,11 +53,11 @@
         <property name="framedata" type="array" class="[Lorg.opensourcephysics.media.core.ImageCoordSystem$FrameData;">
             <property name="[0]" type="object">
             <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
-                <property name="xorigin" type="double">635.987525987526</property>
-                <property name="yorigin" type="double">591.4864864864865</property>
-                <property name="angle" type="double">-89.70660401352045</property>
-                <property name="xscale" type="double">197.0342234412605</property>
-                <property name="yscale" type="double">197.0342234412605</property>
+                <property name="xorigin" type="double">649.5</property>
+                <property name="yorigin" type="double">506.5</property>
+                <property name="angle" type="double">-90.80109561010998</property>
+                <property name="xscale" type="double">286.5628203378814</property>
+                <property name="yscale" type="double">286.5628203378814</property>
             </object>
             </property>
         </property>
@@ -104,10 +104,10 @@
             <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData;">
                 <property name="[0]" type="object">
                 <object class="org.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData">
-                    <property name="x1" type="double">635.987525987526</property>
-                    <property name="y1" type="double">590.9251559251559</property>
-                    <property name="x2" type="double">637.6715176715177</property>
-                    <property name="y2" type="double">787.9521829521829</property>
+                    <property name="x1" type="double">650.0</property>
+                    <property name="y1" type="double">506.4999999999984</property>
+                    <property name="x2" type="double">644.0</property>
+                    <property name="y2" type="double">793.0</property>
                 </object>
                 </property>
             </property>
@@ -301,7 +301,7 @@
         </object>
         </property>
     </property>
-    <property name="selectedtrack" type="string">mass A</property>
+    <property name="selectedtrack" type="string">axes</property>
     <property name="dividers" type="array" class="[D">
         <property name="array" type="string">{0.5706541380556559,0.5710643722115998,1.0,0.47343693530899894}</property>
     </property>
