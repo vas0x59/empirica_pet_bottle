@@ -370,7 +370,7 @@ void loop() {
       ds.deinit();
       Serial.println("stop experiment");
     }
-    if ((time - prev_time) >= 50) {
+    if ((time - prev_time) >= 10) {
       doit(time);
       prev_time = time;
       // delay(500);
