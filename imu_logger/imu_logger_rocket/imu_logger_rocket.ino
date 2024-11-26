@@ -6,13 +6,13 @@
 
 #include <Wire.h>
 #include <Adafruit_BMP280.h>
-// #include <MPU9250_asukiaaa.h>
+#include <MPU9250_asukiaaa.h>
 
 
 Adafruit_BMP280 bmp; // I2C
 
 
-// MPU9250_asukiaaa mySensor;
+MPU9250_asukiaaa mySensor;
 
 
 // FLASH_MAP_SETUP_CONFIG(FLASH_MAP_MAX_FS)
@@ -70,6 +70,7 @@ volatile bool to_report = false;
 
 uint8_t *buffer;
 
+uint32_t duration = 20000;
 
 
 struct Data {
@@ -149,15 +150,15 @@ void doit(uint32_t time) {
   // Serial.println("doit");
   Data data;
   int result;
-  // result = mySensor.accelUpdate();
-  // result = mySensor.gyroUpdate();
+  result = mySensor.accelUpdate();
+  result = mySensor.gyroUpdate();
   data.time = time;
-  // data.wx = mySensor.gyroX();
-  // data.wy = mySensor.gyroY();
-  // data.wz = mySensor.gyroZ();
-  // data.ax =  mySensor.accelX();
-  // data.ay =  mySensor.accelY();
-  // data.az =  mySensor.accelZ();
+  data.wx = mySensor.gyroX();
+  data.wy = mySensor.gyroY();
+  data.wz = mySensor.gyroZ();
+  data.ax =  mySensor.accelX();
+  data.ay =  mySensor.accelY();
+  data.az =  mySensor.accelZ();
   data.baro = bmp.readPressure();
   memcpy(buffer, &data, sizeof(Data));
   dw.write_buffer(buffer, sizeof(Data));
@@ -172,7 +173,16 @@ void handleData() {
 }
 
 void handleStart() {
-  Serial.println("start");
+  Serial.println("at " + String(millis()) + "ms");
+  Serial.println(""); // Add an empty line
+  if (server.args()> 0) {
+    duration = server.arg(0).toInt()*1000;
+
+    Serial.print("set duration to ");
+    Serial.println(duration);
+  }
+  Serial.println("handle start");
+  // duration = server.
   ds.set_ip(server.client().remoteIP());
   do_experiment = true;
 }
@@ -236,14 +246,15 @@ void handleRoot() {
 //     Serial.println("Cannot read mag values " + String(result));
 //   }
 
-  Serial.println("at " + String(millis()) + "ms");
-  Serial.println(""); // Add an empty line
+  
+
   server.send(200, "text/html", 
   "<h1>Rocket</h1>"
   // "<form action=\"/ctrl\" method=\"post\">"
+  "<input id=\"duration\" type=\"number\" value=\"20\" />"
   "<button onclick=\"start()\">Start</button>"
-  "<button href=\"/data\">data</button>"
-  "<script >function start(){const xhr = new XMLHttpRequest(); xhr.open(\"POST\", \"/start\", true);xhr.send(null);}</script>"
+  "<a href=\"/data\">data</a>"
+  "<script >function start(){const xhr = new XMLHttpRequest(); xhr.open(\"POST\", \"/start?duration=\" + document.getElementById('duration').value, true);xhr.send(null);}</script>"
   // "<button name=\"stop\" value=\"stop\">Stop</button>"
   // "</form>"
   );
@@ -259,9 +270,10 @@ void setup() {
   
   Serial.begin(115200);
   Serial.println();
-  
+
   fileSystemConfig.setAutoFormat(false);
   fileSystem->setConfig(fileSystemConfig);
+  fileSystem->format();
   fsOK = fileSystem->begin();
   Serial.println(fsOK ? F("Filesystem initialized.") : F("Filesystem init failed!"));
 
@@ -314,17 +326,17 @@ void setup() {
 
   /* Default settings from datasheet. */
   bmp.setSampling(Adafruit_BMP280::MODE_NORMAL,     /* Operating Mode. */
-                  Adafruit_BMP280::SAMPLING_X2,     /* Temp. oversampling */
-                  Adafruit_BMP280::SAMPLING_X16,    /* Pressure oversampling */
-                  Adafruit_BMP280::FILTER_X16,      /* Filtering. */
-                  Adafruit_BMP280::STANDBY_MS_500); /* Standby time. */
+                  Adafruit_BMP280::SAMPLING_X1,     /* Temp. oversampling */
+                  Adafruit_BMP280::SAMPLING_X4,    /* Pressure oversampling */
+                  Adafruit_BMP280::FILTER_OFF,      /* Filtering. */
+                  Adafruit_BMP280::STANDBY_MS_1); /* Standby time. */
 
 
   // delay(100);
 
-  // mySensor.setWire(&Wire);
-  // mySensor.beginAccel();
-  // mySensor.beginGyro();
+  mySensor.setWire(&Wire);
+  mySensor.beginAccel();
+  mySensor.beginGyro();
 
 
   
@@ -338,7 +350,6 @@ void setup() {
   // doit();
 }
 
-const uint32_t duration = 20000;
 uint32_t start_time = 0;
 uint32_t prev_time = 0;
 
