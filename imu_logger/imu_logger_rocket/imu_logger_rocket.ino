@@ -81,6 +81,9 @@ struct Data {
   float ax;
   float ay;
   float az;
+  float mx;
+  float my;
+  float mz;
   float baro;
 };
 
@@ -152,6 +155,7 @@ void doit(uint32_t time) {
   int result;
   result = mySensor.accelUpdate();
   result = mySensor.gyroUpdate();
+  result = mySensor.magUpdate();
   data.time = time;
   data.wx = mySensor.gyroX();
   data.wy = mySensor.gyroY();
@@ -159,6 +163,9 @@ void doit(uint32_t time) {
   data.ax =  mySensor.accelX();
   data.ay =  mySensor.accelY();
   data.az =  mySensor.accelZ();
+  data.mx =  mySensor.magX();
+  data.my =  mySensor.magY();
+  data.mz =  mySensor.magZ();
   data.baro = bmp.readPressure();
   memcpy(buffer, &data, sizeof(Data));
   dw.write_buffer(buffer, sizeof(Data));
@@ -188,65 +195,6 @@ void handleStart() {
 }
 
 void handleRoot() {
-
-//   float aX, aY, aZ, aSqrt, gX, gY, gZ, mDirection, mX, mY, mZ;
-
-//   uint8_t sensorId;
-//   int result;
-
-//   result = mySensor.readId(&sensorId);
-//   if (result == 0) {
-//     Serial.println("sensorId: " + String(sensorId));
-//   } else {
-//     Serial.println("Cannot read sensorId " + String(result));
-//   }
-
-//   result = mySensor.accelUpdate();
-//   if (result == 0) {
-//     aX = mySensor.accelX();
-//     aY = mySensor.accelY();
-//     aZ = mySensor.accelZ();
-//     aSqrt = mySensor.accelSqrt();
-//     Serial.println("accelX: " + String(aX));
-//     Serial.println("accelY: " + String(aY));
-//     Serial.println("accelZ: " + String(aZ));
-//     Serial.println("accelSqrt: " + String(aSqrt));
-//   } else {
-//     Serial.println("Cannod read accel values " + String(result));
-//   }
-
-//   result = mySensor.gyroUpdate();
-//   if (result == 0) {
-//     gX = mySensor.gyroX();
-//     gY = mySensor.gyroY();
-//     gZ = mySensor.gyroZ();
-//     Serial.println("gyroX: " + String(gX));
-//     Serial.println("gyroY: " + String(gY));
-//     Serial.println("gyroZ: " + String(gZ));
-//   } else {
-//     Serial.println("Cannot read gyro values " + String(result));
-//   }
-
-//   result = mySensor.magUpdate();
-//   if (result != 0) {
-//     Serial.println("cannot read mag so call begin again");
-//     mySensor.beginMag();
-//     result = mySensor.magUpdate();
-//   }
-//   if (result == 0) {
-//     mX = mySensor.magX();
-//     mY = mySensor.magY();
-//     mZ = mySensor.magZ();
-//     mDirection = mySensor.magHorizDirection();
-//     Serial.println("magX: " + String(mX));
-//     Serial.println("maxY: " + String(mY));
-//     Serial.println("magZ: " + String(mZ));
-//     Serial.println("horizontal direction: " + String(mDirection));
-//   } else {
-//     Serial.println("Cannot read mag values " + String(result));
-//   }
-
-  
 
   server.send(200, "text/html", 
   "<h1>Rocket</h1>"
@@ -337,6 +285,7 @@ void setup() {
   mySensor.setWire(&Wire);
   mySensor.beginAccel();
   mySensor.beginGyro();
+  mySensor.beginMag();
 
 
   

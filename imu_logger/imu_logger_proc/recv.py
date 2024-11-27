@@ -17,8 +17,9 @@ while True:
     if t0 == 0:
         t0 = time.time()
     f.write(b)
-    t = struct.unpack("<Lfffffff", b)[0] / 1000
-    print(b)
+    data = struct.unpack("<Lffffffffff", b)
+    t = data[0] / 1000
+    print(data)
     if t0_esp == 0:
         t0_esp = t
     print(t - t0_esp, time.time()-t0)
