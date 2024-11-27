@@ -38,6 +38,10 @@ for i in data:
 # print(data, len(data))  
 
 D = np.array([i for i in data])
+D[:, 0] /= 1000
+D[:, [1, 2, 3]] *= np.pi/180
+ 
+
 np.save("D.npy", D)
 
 
