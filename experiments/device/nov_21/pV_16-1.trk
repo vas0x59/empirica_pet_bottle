@@ -4,8 +4,8 @@
     <property name="width" type="double">1080.0</property>
     <property name="height" type="double">1920.0</property>
     <property name="magnification" type="double">1.5874010519681996</property>
-    <property name="center_x" type="int">779</property>
-    <property name="center_y" type="int">1517</property>
+    <property name="center_x" type="int">935</property>
+    <property name="center_y" type="int">1503</property>
     <property name="videoclip" type="object">
     <object class="org.opensourcephysics.media.core.VideoClip">
         <property name="video" type="object">
@@ -41,7 +41,7 @@
     <object class="org.opensourcephysics.media.core.StepperClipControl">
         <property name="rate" type="double">1.0</property>
         <property name="delta_t" type="double">16.65907483279056</property>
-        <property name="frame" type="int">6160</property>
+        <property name="frame" type="int">6170</property>
     </object>
     </property>
     <property name="coords" type="object">
@@ -53,11 +53,11 @@
         <property name="framedata" type="array" class="[Lorg.opensourcephysics.media.core.ImageCoordSystem$FrameData;">
             <property name="[0]" type="object">
             <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
-                <property name="xorigin" type="double">649.5</property>
-                <property name="yorigin" type="double">506.5</property>
+                <property name="xorigin" type="double">645.8615031178209</property>
+                <property name="yorigin" type="double">794.5914013784051</property>
                 <property name="angle" type="double">-90.80109561010998</property>
-                <property name="xscale" type="double">286.5628203378814</property>
-                <property name="yscale" type="double">286.5628203378814</property>
+                <property name="xscale" type="double">177.08390520279934</property>
+                <property name="yscale" type="double">177.08390520279934</property>
             </object>
             </property>
         </property>
@@ -104,10 +104,10 @@
             <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData;">
                 <property name="[0]" type="object">
                 <object class="org.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData">
-                    <property name="x1" type="double">650.0</property>
-                    <property name="y1" type="double">506.4999999999984</property>
-                    <property name="x2" type="double">644.0</property>
-                    <property name="y2" type="double">793.0</property>
+                    <property name="x1" type="double">643.9711191335741</property>
+                    <property name="y1" type="double">970.3971119133575</property>
+                    <property name="x2" type="double">646.4916311125698</property>
+                    <property name="y2" type="double">793.3311453889072</property>
                 </object>
                 </property>
             </property>
@@ -301,9 +301,9 @@
         </object>
         </property>
     </property>
-    <property name="selectedtrack" type="string">axes</property>
+    <property name="selectedtrack" type="string">calibration stick A</property>
     <property name="dividers" type="array" class="[D">
-        <property name="array" type="string">{0.5706541380556559,0.5710643722115998,1.0,0.47343693530899894}</property>
+        <property name="array" type="string">{0.5702927358149621,0.5717017208413002,1.0,0.47343693530899894}</property>
     </property>
     <property name="selected_view_types" type="array" class="[I">
         <property name="array" type="string">{0,1,2,3}</property>
