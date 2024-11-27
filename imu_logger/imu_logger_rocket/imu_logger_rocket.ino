@@ -285,7 +285,7 @@ void setup() {
   mySensor.setWire(&Wire);
   mySensor.beginAccel();
   mySensor.beginGyro();
-  mySensor.beginMag();
+  mySensor.beginMag(MAG_MODE_CONTINUOUS_100HZ);
 
 
   
