@@ -7,6 +7,8 @@ time:: "0113"
 data: data_recv
 manual_t0_0: 16.69
 manual_t0_1: 16.019
+manual_t0_data: 531
+T: -2
 markers:
   light_1_a: 
     pnt: [0, 0, 0] 
