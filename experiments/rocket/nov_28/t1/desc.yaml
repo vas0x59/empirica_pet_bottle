@@ -13,6 +13,6 @@ markers:
   light_1_b: 
     pnt: [0, 0, 4.43]
   light_2_a: 
-    pnt: [12, 0, 0] 
+    pnt: [12.5, 0, 0] 
   light_2_b: 
-    pnt: [12, 0, 4.43] 
+    pnt: [12.5, 0, 4.43] 

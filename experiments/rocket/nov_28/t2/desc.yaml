@@ -1,8 +1,18 @@
-video_0: video_2024-11-29_14-17-20.mp4
+video_0: VID_20241129_015827.mp4
 video_1: VID_20241129_015958.mp4
 camera_0: dima
 camera_1: artem
 nozzle: 8
-time:: "0200"
-data: data_recv
-note: video_0 is from telegram 
+time:: "0159"
+data: data_recv-2
+manual_t0_0: 104.935
+manual_t0_1: 12.72
+markers:
+  light_1_a: 
+    pnt: [0, 0, 1.05] 
+  light_1_b: 
+    pnt: [0, 0, 4.43]
+  light_2_a: 
+    pnt: [12.5, 0, 1.05] 
+  light_2_b: 
+    pnt: [12.5, 0, 4.43] 
