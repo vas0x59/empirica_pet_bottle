@@ -39,7 +39,7 @@ for i in data:
 
 D = np.array([i for i in data])
 D[:, 0] /= 1000
-D[:, [1, 2, 3]] *= np.pi/180
+# D[:, [1, 2, 3]] *= np.pi/180
  
 
 np.save("D.npy", D)
@@ -61,10 +61,13 @@ T -= T[0]
 # P /= 100;
 
 # altitude = 44330 * (1.0 - pow(P / (101992), 0.1903));
-altitude = -np.log(P) *8.31*(273.5 -6)/9.8/(28/1000)
+altitude = -np.log((P) / (1e5+238)) *8.31*(273.5 -0)/9.8/(29/1000)
+# altitude = ((pow((P[0] / 1e5), (1.0 / 5.257)) - 1) * (0 + 273.15)) / 0.0065 
 
+print(np.max(T) - np.min(T))
 plt.figure()
-plt.scatter(T, altitude - altitude[0])
+plt.scatter(T, altitude-altitude[0])
+# plt.scatter(T, np.gradient(altitude, edge_order=1)/np.gradient(T, edge_order=1))
 # plt.scatter(T, P)
 
 plt.ylabel("H, m")
